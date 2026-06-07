@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── Section ── */
+.contact-section {
+  background: var(--bg-primary);
+}
+
+/* ── Two-column grid ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0 4rem;
+  align-items: start;
+}
+
+/* ── Vertical divider ── */
+.contact-vdivider {
+  background: var(--border);
+  align-self: stretch;
+}
+
+/* ════════════════════════════════
+   LEFT — Connect
+════════════════════════════════ */
+.contact-left {
+  padding-right: 1rem;
+}
+
+.contact-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-top: 0.5rem;
+  margin-bottom: 2.25rem;
+}
+
+/* ── Icons in a single row ── */
+.contact-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.contact-icon-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light);
+  transform: translateY(-3px);
+}
+
+/* ════════════════════════════════
+   RIGHT — Form
+════════════════════════════════ */
+.contact-right {
+  padding-left: 1rem;
+}
+
+.form-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-tertiary);
+  font-size: 0.84rem;
+}
+
+.submit-btn {
+  align-self: flex-end;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.75rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.submit-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.submit-btn:active { transform: translateY(0); }
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Error ── */
+.form-error {
+  font-size: 0.8rem;
+  color: #c0392b;
+  background: #fdf0ee;
+  border: 1px solid #f5c6c0;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+}
+
+/* ── Success ── */
+.form-success {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-secondary);
+}
+
+.success-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 auto 1.25rem;
+}
+
+.form-success h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.form-success p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.btn-outline {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Mobile ── */
+@media (max-width: 820px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem 0;
+  }
+
+  .contact-vdivider { display: none; }
+  .contact-left { padding-right: 0; }
+  .contact-right { padding-left: 0; }
+
+  .submit-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}

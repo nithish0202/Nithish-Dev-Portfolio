@@ -1,0 +1,137 @@
+.cert-section {
+  background: var(--bg-secondary);
+}
+
+.cert-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0;
+  row-gap: 0;
+}
+
+/* ── Each item ── */
+.cert-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: padding-left 0.2s ease;
+}
+
+/* left column items get a right border acting as column divider */
+.cert-item:nth-child(odd) {
+  padding-right: 2.5rem;
+  border-right: 1px solid var(--border);
+}
+
+.cert-item:nth-child(even) {
+  padding-left: 2.5rem;
+}
+
+/* bottom border on last two items */
+.cert-item:nth-last-child(1),
+.cert-item:nth-last-child(2) {
+  border-bottom: 1px solid var(--border);
+}
+
+/* hover accent left bar — only for left column */
+.cert-item:nth-child(odd)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.2s ease;
+}
+
+.cert-item:nth-child(odd):hover::before {
+  transform: scaleY(1);
+}
+
+/* hover accent right bar — for right column */
+.cert-item:nth-child(even)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.2s ease;
+}
+
+.cert-item:nth-child(even):hover::after {
+  transform: scaleY(1);
+}
+
+.cert-item:hover {
+  padding-left: 0.6rem;
+}
+
+.cert-item:nth-child(even):hover {
+  padding-left: 3rem;
+}
+
+/* ── Category label ── */
+.cert-category {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+/* ── Title ── */
+.cert-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.cert-item:hover .cert-title {
+  color: var(--accent);
+}
+
+/* ── Issuer ── */
+.cert-issuer {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+}
+
+/* ── Mobile: single column ── */
+@media (max-width: 580px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-item:nth-child(odd) {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .cert-item:nth-child(even) {
+    padding-left: 0;
+  }
+
+  .cert-item:nth-last-child(2) {
+    border-bottom: none;
+  }
+
+  .cert-item:nth-child(even)::after {
+    display: none;
+  }
+}
