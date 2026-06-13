@@ -1,4 +1,4 @@
-# Nithish Kumar — Portfolio
+# Nithish M — Portfolio
 
 A clean, minimal, responsive portfolio built with React. Includes light/dark mode, smooth scroll navigation, and sections for Hero, About, Skills, Experience, Projects, Certifications, Contact, and Footer.
 
